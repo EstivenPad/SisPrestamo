@@ -157,7 +157,7 @@
         var url = '/rol/getListaRoles?filtro=' + filtro +'&criterio=' + criterio ;
         axios.get(url).then(response => {
           this.inicializarPaginacion();
-          console.log(response);
+          
           this.listaRol = response.data;
           this.fullscreenLoading = false;
         }).catch(error => {

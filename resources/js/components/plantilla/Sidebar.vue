@@ -42,7 +42,7 @@
                 <li class="nav-item">
                     <template v-if="listaPermisos.includes('index')">
                         <router-link class="nav-link" :to="'/'" >
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>Inicio</p>
                         </router-link>
                     </template>

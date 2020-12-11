@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 function verificarAcceso(to, from, next){
     let authUser = JSON.parse(sessionStorage.getItem('authUser'));
-    console.log(authUser);
+    
     if(authUser){
         let listaPermisosByRol = JSON.parse(sessionStorage.getItem('listaPermisosByRol'));
         if(listaPermisosByRol.includes(to.name)){

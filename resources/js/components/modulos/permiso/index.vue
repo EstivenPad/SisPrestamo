@@ -163,7 +163,7 @@
         
         axios.get(url).then(response => {
           this.inicializarPaginacion();
-          console.log(response);
+          
           this.listPermiso = response.data;
           this.fullscreenLoading = false;
         }).catch(error => {
