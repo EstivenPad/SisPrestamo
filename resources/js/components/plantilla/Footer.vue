@@ -1,9 +1,9 @@
 <template>
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Versión</b> 1.0.0
-        </div>
-        <strong>Copyright &copy; 2020.</strong> All rights reserved.
+    <footer >
+        <div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
+
+
+					</div>
     </footer>
 </template>
 

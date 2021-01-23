@@ -9,9 +9,7 @@ const mix = require('laravel-mix');
  | for your Laravel application. By default, we are compiling the Sass
  | file for the application as well as bundling up all the JS files.
  |
- */
-
-mix.styles([
+ */mix.styles([
     'resources/vendor/css/adminlte.min.css',
     'resources/vendor/css/all.min.css',
     'resources/vendor/css/estilos.css'
@@ -20,6 +18,6 @@ mix.styles([
     .scripts([
         'resources/vendor/js/adminlte.min.js',
         'resources/vendor/js/demo.js',
-    ], 'public/js/plantilla.js')    
+    ], 'public/js/plantilla.js')
     .copy('resources/vendor/fontawesome/webfonts', 'public/webfonts')
     .copy('resources/vendor/img', 'public/img');
