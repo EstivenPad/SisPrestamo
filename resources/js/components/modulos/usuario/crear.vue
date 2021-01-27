@@ -1,105 +1,120 @@
 <template>
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Crear Usuario</h1>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
 
-    <div class="content container-fluid">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-tools">
-            <router-link class="btn btn-info btn-sm" :to="'/usuario'">
-              <i class="fas fa-arrow-left"></i> Regresar
-            </router-link>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="container-fluid">
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Formulario Registrar Usuario</h3>
-              </div>
-              <div class="card-body">
-                <form role="form">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Nombre</label>
-                        <div class="col-md-9">
-                          <input type="text" class="form-control" v-model="Usuario.Nombre" @keyup.enter="setRegistrarUsuario()">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Apellido</label>
-                        <div class="col-md-9">
-                          <input type="text" class="form-control" v-model="Usuario.Apellido" @keyup.enter="setRegistrarUsuario()">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Usuario</label>
-                        <div class="col-md-9">
-                          <input type="text" class="form-control" v-model="Usuario.Usuario" @keyup.enter="setRegistrarUsuario()">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Contraseña</label>
-                        <div class="col-md-9">
-                          <el-input placeholder="Ingrese una Contraseña" v-model="Usuario.Contrasena" @keyup.enter="setRegistrarUsuario" show-password></el-input>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Rol</label>
-                        <div class="col-md-9">
-                          <template>
-                            <el-select v-model="Usuario.Rol" placeholder="Seleccione un rol">
-                              <el-option
-                                v-for="item in listaRoles"
-                                :key="item.id"
-                                :label="item.name"
-                                :value="item.id">
-                              </el-option>
-                            </el-select>
-                          </template>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Fotografía</label>
-                        <div class="col-md-9">
-                          <input type="file" @change="getFile">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>                
-              <div class="card-footer">
-                <div class="row">
-                  <div class="col-md-4 offset-4">
-                    <button class="btn btn-default btnWidth" @click.prevent="limpiarCampos">Limpiar</button>
-                    <button class="btn btn-info btnWidth" @click.prevent="setRegistrarUsuario" v-loading.fullscreen.lock="fullscreenLoading">Registrar</button>
-                  </div>
+    <div class="container">
+
+        <div class="card card-custom gutter-b">
+            <div class="card-header flex-wrap py-3">
+                <div class="card-title">
+                    <h3 class="card-label">Crear Usuario</h3>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                <div class="card-toolbar">
+                    <router-link   :to="'/usuario'" class="btn btn-outline-primary mr-3 noActive">
+                        <i class="flaticon2-left-arrow-1"></i>Regresar</router-link>
+                </div>
 
+            </div>
+            <div class="card-body">
+                <div id="kt_datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="card card-custom card-border">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <span class="card-icon">
+                                            <i class="flaticon-edit-1 text-primary icon-lg"></i>
+                                        </span>
+                                        <h3 class="card-label">Formulario Registrar Usuarios</h3>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form role="form">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class=" col-md-3 col-form-label">Nombre</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" v-model="Usuario.Nombre"
+                                                            @keyup.enter="setRegistrarUsuario()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label">Apellido</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" v-model="Usuario.Apellido"
+                                                            @keyup.enter="setRegistrarUsuario()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label">Usuario</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" v-model="Usuario.Usuario"
+                                                            @keyup.enter="setRegistrarUsuario()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label">Contraseña</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" v-model="Usuario.Contrasena"
+                                                            @keyup.enter="setRegistrarUsuario()">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label">Rol</label>
+                                                    <div class="col-md-9">
+                                                      <select class="form-control" id="exampleSelect1" v-model="Usuario.Rol" >
+                                                        <option v-for="item in listaRoles"
+                                                          :key="item.id"
+                                                          :label="item.name"
+                                                          :value="item.id">
+                                                        </option>
+                                                      </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-form-label">Fotografía</label>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                          <div class="col-md-9 col-sm-12">
+                                                            <div class="dropzone dropzone-default dz-clickable" id="kt_dropzone_1">
+                                                              <div class="dropzone-msg dz-message needsclick">
+                                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>
+                                                                <span class="dropzone-msg-desc">This is just a demo dropzone. Selected files are
+                                                                <strong>not</strong>actually uploaded.</span>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row justify-content-center">
+                                        <button class="btn btn-secondary mr-2"
+                                            @click.prevent="limpiarCampos">Limpiar</button>
+                                        <button class="btn btn-primary" @click.prevent="setRegistrarUsuario"
+                                            v-loading.fullscreen.lock="fullscreenLoading">Registrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     <div class="modal fade" :class="{ show: modalShow }" :style=" modalShow ? mostrarModal : ocultarModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -116,7 +131,7 @@
             </div>
         </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <script>

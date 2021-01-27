@@ -5,7 +5,7 @@
         <div class="card card-custom gutter-b">
             <div class="card-header flex-wrap py-3">
                 <div class="card-title">
-                    <h3 class="card-label">Crar Rol </h3>
+                    <h3 class="card-label">Crear Rol </h3>
                 </div>
                 <div class="card-toolbar">
                     <router-link   :to="'/rol'" class="btn btn-outline-primary mr-3 noActive">

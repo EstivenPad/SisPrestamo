@@ -19,7 +19,7 @@
 }
 
 /******************** Estilos de v-tooltip ***********************/
-.tooltip {
+/* .tooltip {
   display: block !important;
   z-index: 10000;
 }
@@ -182,4 +182,4 @@
 }
 #container-floating :hover #floating-button .plusH:hover {
   opacity: 1 !important;
-}
+} */
