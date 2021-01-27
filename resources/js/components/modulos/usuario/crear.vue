@@ -83,19 +83,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group row">
                                                     <label class="col-md-3 col-form-label">Fotografía</label>
-                                                    <div class="col-md-9">
-                                                        <div class="form-group row">
-                                                          <div class="col-md-9 col-sm-12">
-                                                            <div class="dropzone dropzone-default dz-clickable" id="kt_dropzone_1">
-                                                              <div class="dropzone-msg dz-message needsclick">
-                                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>
-                                                                <span class="dropzone-msg-desc">This is just a demo dropzone. Selected files are
-                                                                <strong>not</strong>actually uploaded.</span>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                    </div>
+                                                	<div class="dropzone dropzone-default" id="kt_dropzone_1">
+														<div class="dropzone-msg dz-message needsclick">
+															<h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>
+															<span class="dropzone-msg-desc">This is just a demo dropzone. Selected files are
+															<strong>not</strong>actually uploaded.</span>
+														</div>
+													</div>
                                                 </div>
                                             </div>
                                         </div>

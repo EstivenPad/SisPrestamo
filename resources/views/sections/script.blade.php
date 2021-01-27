@@ -2,8 +2,7 @@
 <script src="{{ asset('js/app.js') }}"></script>
 
 <!-- AdminLTE App, demo -->
-<script src="{{ asset('js/uppy.bundle.js') }}"></script>
-<script src="{{ asset('js/uppy.js') }}"></script>
+<script src="{{ asset('js/dropzonejs.js') }}"></script>
 <script src="{{ asset('plugins/global/plugins.bundle.js')}}"></script>
 <script src="{{ asset('plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
 <script src="{{ asset('js/scripts.bundle.js')}}"></script>
