@@ -83,13 +83,23 @@
                                             <div class="col-md-6">
                                                 <div class="form-group row">
                                                     <label class="col-md-3 col-form-label">Fotografía</label>
-                                                	<div class="dropzone dropzone-default" id="kt_dropzone_1">
-														<div class="dropzone-msg dz-message needsclick">
-															<h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>
-															<span class="dropzone-msg-desc">This is just a demo dropzone. Selected files are
-															<strong>not</strong>actually uploaded.</span>
-														</div>
-													</div>
+                                                    <div class="col-lg-9 col-xl-6">
+                                                    <div class="image-input image-input-empty image-input-outline" id="kt_image_4" style="background-image: url('../img/blank.png')">
+                                                      <div class="image-input-wrapper"></div>
+                                                      <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Cambiar Imagen">
+                                                        <i class="fa fa-pen icon-sm text-muted"></i>
+                                                        <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
+                                                        <input type="hidden" name="profile_avatar_remove" />
+                                                      </label>
+                                                      <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="Eliminar Imagen">
+                                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                      </span>
+                                                      <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Eliminar Imagen">
+                                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                      </span>
+                                                    </div>
+                                                    <span class="form-text text-muted">Default empty input with blank image</span>
+                                                  </div>
                                                 </div>
                                             </div>
                                         </div>
